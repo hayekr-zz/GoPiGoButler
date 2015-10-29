@@ -18,11 +18,19 @@ class Pigo:
             time.sleep(.1)
             print "Error, Try Again"
 
+    def fwd(selfself):
+        self.isMoving = True
+        while fwd() != 1:
+            time.sleep(.1)
+            print "Error, You Failed Try Again"
 
-    def currentServoPos:
+
+    #def currentServoPos:
 
 
 butler = Pigo()
-
+tina.fwd()
+tina.sleep(2)
+tina.stop()
 
 
