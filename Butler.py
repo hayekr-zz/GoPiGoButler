@@ -1,36 +1,42 @@
 from gopigo import *
 import time
 
-__author__ = "Robert Hayek and Keith Neyman "
+__author__ = 'Robert Hayek and Keith Neyman'
 
 class Pigo:
 
-    isMoving = False
-    servoPos = 90
-    currentPos =
+    ############
+    ############ BASIC STATUS AND METHODS
+    ############
+    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175, 'rightspeed' : 175}
+
 
     def __init__(self):
-        print "WORKING"
+        print "ON"
 
     def stop(self):
         self.isMoving = False
-        while stop() != 1:
+        while stop() !=1
             time.sleep(.1)
-            print "Error, Try Again"
-
-    def fwd(selfself):
+            print "ERROR"
+    def fwd(self):
         self.isMoving = True
         while fwd() != 1:
-            time.sleep(.1)
-            print "Error, You Failed Try Again"
+            time.slepp(.1)
+            print "ERROR"
 
 
-    #def currentServoPos:
+    ############
+    ############ COMPLEX METHODS
+    ############
+
+    ############
+    ############ MAIN APP STARTS HERE
+    ############
 
 
 butler = Pigo()
-tina.fwd()
-tina.sleep(2)
-tina.stop()
-
+butler.fwd()
+butler.sleep(2)
+butler.stop()
 
