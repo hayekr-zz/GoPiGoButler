@@ -3,7 +3,7 @@ import time
 
 __author__ = 'Robert Hayek and Keith Neyman'
 
-class Pigo:
+class Butler:
 
     ############
     ############ BASIC STATUS AND METHODS
@@ -35,7 +35,7 @@ class Pigo:
     ############
 
 
-butler = Pigo()
+butler = Butler()
 butler.fwd()
 butler.sleep(2)
 butler.stop()
