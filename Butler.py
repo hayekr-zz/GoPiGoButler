@@ -16,13 +16,13 @@ class Pigo:
 
     def stop(self):
         self.isMoving = False
-        while stop() !=1
+        while stop() !=1:
             time.sleep(.1)
             print "ERROR"
     def fwd(self):
         self.isMoving = True
         while fwd() != 1:
-            time.slepp(.1)
+            time.sleep(.1)
             print "ERROR"
 
 

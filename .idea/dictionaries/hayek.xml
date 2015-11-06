@@ -2,6 +2,9 @@
   <dictionary name="hayek">
     <words>
       <w>gopigo</w>
+      <w>ismoving</w>
+      <w>leftspeed</w>
+      <w>rightspeed</w>
     </words>
   </dictionary>
 </component>
