@@ -40,7 +40,7 @@ class Butler:
     ############
     ######## COMPLEX METHODS
     ############
-    def dance(self)
+    def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
         self.shuffle()
