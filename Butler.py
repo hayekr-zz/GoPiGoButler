@@ -9,21 +9,22 @@ class Butler:
     ############ BASIC STATUS AND METHODS
     ############
 
-    status = {'ismoving' : False, 'servo' : 90, 'leftspeed' : 175, 'rightspeed' : 175}
+    status = {'isMoving' : False, 'servo' : 90, 'leftSpeed' : 175, 'rightSpeed' : 175}
 
     def __init__(self):
-        print "ON"
+        print "ROBOT IS NOW ON"
 
     def stop(self):
-        self.isMoving = False
-        while stop() !=1:
-            time.sleep(.1)
-            print "ERROR"
+        self.status["isMoving"] = False
+        print "STOPPING" #debugging message (delete later)
+        for x in range(3):
+            stop()
+
     def fwd(self):
         self.isMoving = True
-        while fwd() != 1:
-            time.sleep(.1)
-            print "ERROR"
+        print "MOVING" #debugging message (delete later)
+        for x in range(3):
+            fwd()
 
 
     ############
