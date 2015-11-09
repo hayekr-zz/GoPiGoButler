@@ -15,7 +15,7 @@ class Butler:
     def __init__(self):
         print "ROBOT IS NOW ON"
         self.Butler = "Butler"
-        self.status['distance'] = us_dist(15) #update distance status with the current distance through ultrasonic sensor in (mm)
+        self.status['distance'] = us_dist(15) #update distance  with the current distance through ultrasonic sensor in (mm)
     def stop(self):
         self.status["isMoving"] = False
         print "STOPPING" #debugging message (delete later after)
