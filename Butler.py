@@ -45,7 +45,7 @@ class Butler:
             return True
 
     def checkDistance(self):
-        self.status['distance'] = us_dist(50)
+        self.status['distance'] = us_dist(15)
         print "CHECKING DISTANCE" + "SOMETHING IS " + str(self.status['distance']) + "mm away"
 
     def spin(self):
