@@ -39,7 +39,7 @@ class Butler:
         if self.status['distance'] < STOP_DIST:
             return False
         elif volt() > 14 or volt() < 6:
-            print volt
+            print "volt"
             return False
         else:
             return True
