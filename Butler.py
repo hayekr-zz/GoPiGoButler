@@ -15,14 +15,14 @@ move = "MOVING"
 
 class Butler:
 
+
     ############
     ######## BASIC STATUS AND METHODS
     ############
-    status = {'isMoving' : False, 'servo' : 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}
+    status = {'isMoving' : False, 'servo': 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}
 
     def __init__(self):
         print on
-        self.Butler = "Butler" #define self
         self.status['distance'] = us_dist(15) #update distance  with the current distance through ultrasonic sensor in (mm)
     def stop(self):
         self.status["isMoving"] = False
@@ -36,7 +36,7 @@ class Butler:
         for x in range(3):
             fwd()
     #Check if conditions are safe for ButlerPi to continue
-    def keepGoing(selfself):
+    def keepGoing(self):
         if self.status['distance'] < STOP_DIST:
             return False
         elif volt() > 14 or volt() < 6:
