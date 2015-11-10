@@ -73,8 +73,7 @@ butler = Butler()
 while butler.keepGoing():
     butler.checkDistance()
     butler.fwd()
-    butler.sleep(2)
+    time.sleep(2)
     butler.stop()
-
 butler.stop()
 
