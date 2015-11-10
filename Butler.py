@@ -79,5 +79,5 @@ while butler.keepGoing():
     butler.fwd()
     time.sleep(2)
     butler.stop()
-butler.stop()
+butler.stop()h
 butler.checkDistance()
