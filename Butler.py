@@ -25,13 +25,13 @@ class Butler:
         self.status['distance'] = us_dist(15) #update distance  with the current distance through ultrasonic sensor in (mm)
     def stop(self):
         self.status["isMoving"] = False
-        print stop #debugging message (delete later after)
+        print STOP #debugging message (delete later after)
         for x in range(3):
             stop()
 
     def fwd(self):
         self.isMoving = True
-        print move #debugging message (delete later)
+        print MOVE#debugging message (delete later)
         for x in range(3):
             fwd()
     #Check if conditions are safe for ButlerPi to continue
@@ -39,7 +39,7 @@ class Butler:
         if self.status['distance'] < STOP_DIST:
             return False
         elif volt() > 14 or volt() < 6:
-            print "volt"
+            print VOLT
             return False
         else:
             return True
