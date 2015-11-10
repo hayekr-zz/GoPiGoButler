@@ -7,11 +7,10 @@ import time
 STOP_DIST = 50
 
 #print variables
-error = "ERROR"
-volt = "HAZARDOUS VOLTAGE"
-on = "BUTLERPI IS NOW ON"
-stop = "STOPPING"
-move = "MOVING"
+ERROR = "ERROR"
+VOLT = "HAZARDOUS VOLTAGE"
+STOP = "STOPPING"
+MOVE = "MOVING"
 
 class Butler:
 
@@ -22,7 +21,7 @@ class Butler:
     status = {'isMoving' : False, 'servo': 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}
 
     def __init__(self):
-        print on
+        print "BUTLERPI IS NOW ON"
         self.status['distance'] = us_dist(15) #update distance  with the current distance through ultrasonic sensor in (mm)
     def stop(self):
         self.status["isMoving"] = False
