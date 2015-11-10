@@ -1,4 +1,4 @@
-__author__ = 'Robert Hayek and Keith Neyman'
+#__author__ = 'Robert Hayek and Keith Neyman'
 
 from gopigo import *
 import time
