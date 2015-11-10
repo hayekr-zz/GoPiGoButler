@@ -48,6 +48,11 @@ class Butler:
         self.status['distance'] = us_dist(15)
         print "CHECKING DISTANCE" + "SOMETHING IS " + str(self.status['distance']) + "mm away"
 
+    def spin(self):
+        right_rot()
+        time.sleep(6)
+        self.stop()
+
     ############
     ######## COMPLEX METHODS
     ############
