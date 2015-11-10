@@ -4,7 +4,7 @@ from gopigo import *
 import time
 
 #Global Variable that says how far butler can get to a wall
-STOP_DIST = 50
+STOP_DIST = 200
 
 #print variables
 ERROR = "ERROR"
