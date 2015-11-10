@@ -1,7 +1,8 @@
-#__author__ = 'Robert Hayek and Keith Neyman'
-
+#imports
 from gopigo import *
 import time
+
+__author__ = 'Robert Hayek and Keith Neyman'
 
 #Global Variable that says how far butler can get to a wall
 STOP_DIST = 200
@@ -11,6 +12,7 @@ ERROR = "ERROR"
 VOLT = "HAZARDOUS VOLTAGE"
 STOP = "STOPPING"
 MOVE = "MOVING"
+YES = "CONTINUING"
 
 class Butler:
 
@@ -31,17 +33,19 @@ class Butler:
 
     def fwd(self):
         self.isMoving = True
-        print MOVE#debugging message (delete later)
+        print MOVEn#debugging message (delete later)
         for x in range(3):
             fwd()
     #Check if conditions are safe for ButlerPi to continue
     def keepGoing(self):
         if self.status['distance'] < STOP_DIST:
+            print ERROR
             return False
         elif volt() > 14 or volt() < 6:
             print VOLT
             return False
         else:
+            print YES
             return True
 
     def checkDistance(self):
