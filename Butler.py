@@ -78,7 +78,7 @@ class Butler:
 ############
 butler = Butler()
 while butler.keepGoing():
-    butler.checkDistance()
+    butler.keepWatch()
     butler.fwd()
     time.sleep(2)
     butler.stop()
