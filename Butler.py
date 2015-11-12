@@ -68,12 +68,16 @@ class Butler:
         right_rot()
         time.sleep(6)
         self.stop()
-    #def stobe(self):
-        #while self.keepGoing():
+    def stobe(self):
+        while self.keepGoing():
+            led(5)
+            led_on(.10)
+            led_off(.10)
+
 
     def equilizeSpeed(self):
-        set_left_speed(100)
-        set_right_speed(100)
+        set_left_speed(500)
+        set_right_speed(500)
 
 
     ############
