@@ -28,19 +28,25 @@ class Butler:
     def stop(self):
         self.status["isMoving"] = False
         print STOP #debugging message (delete later after)
-        for x in range(3):
+        for x in range(5):
             stop()
+            time.sleep(.05)
 
     def fwd(self):
-        self.isMoving = True
+        self.status['isMoving'] = True
         print MOVE#debugging message (delete later)
-        for x in range(3):
+        for x in range(5):
             fwd()
+            time.sleep(.1)
+
     #Check if conditions are safe for ButlerPi to continue
     def keepGoing(self):
         if self.status['distance'] < STOP_DIST:
-            print ERROR
-            return False
+            print "OBSTACLE FOUND CHECKING WEATHER TO STOP"
+            self.checkDistance()
+            if self.status['distance'] < STOP_DIST:
+                print ERROR
+                return False
         elif volt() > 14 or volt() < 6:
             print VOLT
             return False
@@ -51,6 +57,7 @@ class Butler:
     def keepWatch(self):
         while self.keepGoing():
             self.checkDistance()
+
     def checkDistance(self):
         self.status['distance'] = us_dist(15)
         print "CHECKING DISTANCE" + "SOMETHING IS " + str(self.status['distance']) + "mm away"
@@ -80,7 +87,5 @@ butler = Butler()
 while butler.keepGoing():
     butler.fwd()
     butler.keepWatch()
-    time.sleep(2)
-    butler.stop()
 butler.stop()
-butler.checkDistance()
+print butler.status
