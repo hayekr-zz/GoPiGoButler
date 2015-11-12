@@ -64,6 +64,20 @@ class Butler:
         self.status['distance'] = us_dist(15)
         print "CHECKING DISTANCE..." + "SOMETHING IS " + str(self.status['distance']) + "mm away"
 
+    def equalizeSpeed(self):
+        set_left_speed(500)
+        set_right_speed(500)
+
+    def butlerStatus(self):
+        print volt()
+        print fw_ver()
+        print read_status()
+        print read_enc_status()
+        print read_timeout_status()
+
+    ############
+    ######## Dance Methods
+    ############
     def spin(self):
         right_rot()
         time.sleep(6)
@@ -78,11 +92,6 @@ class Butler:
             led_on(.10)
             led_off(.10)
 
-    def equilizeSpeed(self):
-        set_left_speed(500)
-        set_right_speed(500)
-
-    def status(self):
 
     ############
     ######## COMPLEX METHODS
@@ -102,8 +111,9 @@ class Butler:
 ############
 butler = Butler()
 while butler.keepGoing():
-    butler.equilizeSpeed()
-    butler.fwd()
+    butler.equalizeSpeed()
+    butler.dance()
     butler.keepWatch()
 butler.stop()
 print butler.status
+butler.butlerStatus()
