@@ -1,3 +1,5 @@
+#GOPIGO API http://www.dexterindustries.com/GoPiGo/programming/python-programming-for-the-raspberry-pi-gopigo/
+
 #imports
 from gopigo import *
 import time
@@ -66,6 +68,13 @@ class Butler:
         right_rot()
         time.sleep(6)
         self.stop()
+    #def stobe(self):
+        #while self.keepGoing():
+
+    def equilizeSpeed(self):
+        set_left_speed(100)
+        set_right_speed(100)
+
 
     ############
     ######## COMPLEX METHODS
@@ -77,7 +86,7 @@ class Butler:
         self.shakeServo()
         self.rightTurn()
         self.leftTurn()
-        self.led()
+        self.strobe()
 
 
 ############
@@ -86,6 +95,7 @@ class Butler:
 butler = Butler()
 while butler.keepGoing():
     butler.fwd()
+    butler.equilizeSpeed()
     butler.keepWatch()
 butler.stop()
 print butler.status
