@@ -33,7 +33,7 @@ class Butler:
 
     def fwd(self):
         self.isMoving = True
-        print MOVEn#debugging message (delete later)
+        print MOVE#debugging message (delete later)
         for x in range(3):
             fwd()
     #Check if conditions are safe for ButlerPi to continue
