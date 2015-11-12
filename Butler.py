@@ -99,11 +99,12 @@ class Butler:
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
+        self.strobe()
         self.shuffle()
         self.shakeServo()
         self.rightTurn()
         self.leftTurn()
-        self.strobe()
+
 
 
 ############
