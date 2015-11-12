@@ -95,6 +95,12 @@ class Butler:
             time.sleep(.10)
             led_off(1)
 
+    def shuffle(self, time):
+        while self.keepGoing():
+            right_rot()
+            time.sleep(.10)
+            left_rot()
+            time.sleep(.10)
 
     ############
     ######## COMPLEX METHODS
@@ -117,7 +123,7 @@ while butler.keepGoing():
     butler.equalizeSpeed()
     butler.dance()
     butler.fwd()
-    butler.strobe
+    butler.strobe()
     butler.keepWatch()
 butler.stop()
 print butler.status
