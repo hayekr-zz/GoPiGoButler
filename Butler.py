@@ -48,6 +48,9 @@ class Butler:
             print YES
             return True
 
+    def keepWatch(self):
+        while self.keepGoing():
+            self.checkDistance()
     def checkDistance(self):
         self.status['distance'] = us_dist(15)
         print "CHECKING DISTANCE" + "SOMETHING IS " + str(self.status['distance']) + "mm away"
@@ -79,5 +82,5 @@ while butler.keepGoing():
     butler.fwd()
     time.sleep(2)
     butler.stop()
-butler.stop()h
+butler.stop()
 butler.checkDistance()
