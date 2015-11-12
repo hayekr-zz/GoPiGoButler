@@ -5,7 +5,7 @@ import time
 __author__ = 'Robert Hayek and Keith Neyman'
 
 #Global Variable that says how far butler can get to a wall
-STOP_DIST = 200
+STOP_DIST = 50
 
 #print variables
 ERROR = "ERROR"
