@@ -88,9 +88,12 @@ class Butler:
 
     def strobe(self):#Strobe light using the LEDs
         while self.keepGoing():
-            led(5)
-            led_on(.10)
-            led_off(.10)
+            led_on(1)
+            time.sleep(.10)
+            led_off(1)
+            led_on(0)
+            time.sleep(.10)
+            led_off(1)
 
 
     ############
@@ -99,7 +102,6 @@ class Butler:
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
-        self.strobe()
         self.shuffle()
         self.shakeServo()
         self.rightTurn()
@@ -114,6 +116,8 @@ butler = Butler()
 while butler.keepGoing():
     butler.equalizeSpeed()
     butler.dance()
+    butler.fwd()
+    butler.strobe
     butler.keepWatch()
 butler.stop()
 print butler.status
