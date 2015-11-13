@@ -98,16 +98,25 @@ class Butler(threading.Thread):
             time.sleep(.10)
             led_off(1)
 
-    def shuffle(self, time):
+    def shuffle(self):
         while self.keepGoing():
             right_rot()
             time.sleep(.10)
             left_rot()
             time.sleep(.10)
 
-    ############
+    def shakeServo(self):
+        enable_servo()
+        servo(45)
+        servo(-10)
+        servo(10)
+        servo(-20)
+        servo(10)
+        diasble_servo()
+
+    #############
     ######## COMPLEX METHODS
-    ############
+    #############
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
