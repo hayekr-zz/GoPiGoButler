@@ -18,7 +18,7 @@ STOP = "STOPPING"
 MOVE = "MOVING"
 YES = "CONTINUING"
 
-class Butler(threading.Thread):
+class Pigo(threading.Thread):
 
 
     ############
@@ -130,7 +130,7 @@ class Butler(threading.Thread):
 ############
 ######## MAIN APP STARTS HERE
 ############
-butler = Butler()
+butler = Pigo()
 while butler.keepGoing():
     butler.equalizeSpeed()
     butler.dance()
