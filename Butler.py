@@ -95,12 +95,15 @@ class Butler:
             time.sleep(.10)
             led_off(1)
 
-    def shuffle(self, time):
+    def shuffle(self):
         while self.keepGoing():
             right_rot()
             time.sleep(.10)
             left_rot()
             time.sleep(.10)
+
+    def shakeServo(self):
+        servo()
 
     ############
     ######## COMPLEX METHODS
