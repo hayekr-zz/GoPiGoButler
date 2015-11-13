@@ -111,9 +111,9 @@ class Butler:
         servo(10)
         diasble_servo()
 
-    ############
+    #############
     ######## COMPLEX METHODS
-    ############
+    #############
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
