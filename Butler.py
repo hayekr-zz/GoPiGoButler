@@ -2,7 +2,8 @@
 
 #imports
 from gopigo import *
-import time, threading
+import time
+import threading
 
 
 __author__ = 'Robert Hayek and Keith Neyman'
