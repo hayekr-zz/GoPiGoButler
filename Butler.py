@@ -103,7 +103,13 @@ class Butler:
             time.sleep(.10)
 
     def shakeServo(self):
-        servo()
+        enable_servo()
+        servo(45)
+        servo(-10)
+        servo(10)
+        servo(-20)
+        servo(10)
+        diasble_servo()
 
     ############
     ######## COMPLEX METHODS
