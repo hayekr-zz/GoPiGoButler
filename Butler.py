@@ -137,7 +137,7 @@ class Pigo(threading.Thread):
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
-        self.shuffle()
+        #self.shuffle()
         #self.servoSweep()
        # self.shakeServo()
        # self.rightTurn()
