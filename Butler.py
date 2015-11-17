@@ -121,8 +121,10 @@ class Pigo(threading.Thread):
 
      def leftTurn(self):
         fwd()
+        time.sleep(.10)
         left_rot(50)
-        bwd()
+        fwd()
+        time.sleep(.10)
 
     #############
     ######## COMPLEX METHODS
