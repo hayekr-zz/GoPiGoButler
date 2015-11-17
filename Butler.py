@@ -119,7 +119,7 @@ class Pigo(threading.Thread):
         right_rot(50)
         fwd()
 
-     def leftTurn(self):
+    def leftTurn(self):
         fwd()
         time.sleep(.10)
         left_rot(50)
