@@ -150,9 +150,9 @@ class Pigo(threading.Thread):
 ############
 butler = Pigo()
 while butler.keepGoing():
+    butler.keepGoing()
     butler.equalizeSpeed()
     butler.dance()
-    butler.fwd()
     butler.strobe()
     butler.keepWatch()
 butler.stop()
