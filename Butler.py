@@ -129,9 +129,8 @@ class Pigo(threading.Thread):
     #############
     def servoSweep(self):
         for ang in range(20, 160, 5):
-            if ang % 15 == 0:
-                servo(ang)
-                time.sleep(.1)
+            servo(ang)
+            time.sleep(.1)
 
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
