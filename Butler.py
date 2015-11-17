@@ -114,6 +114,16 @@ class Pigo(threading.Thread):
         servo(10)
         diasble_servo()
 
+    def rightTurn(self):
+        fwd()
+        right_rot(50)
+        fwd()
+
+     def leftTurn(self):
+        fwd()
+        left_rot(50)
+        bwd()
+
     #############
     ######## COMPLEX METHODS
     #############
