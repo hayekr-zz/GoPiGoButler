@@ -127,10 +127,17 @@ class Pigo(threading.Thread):
     #############
     ######## COMPLEX METHODS
     #############
+    def servoSweep(self):
+        for ang in range(20, 160, 5):
+            if ang % 15 == 0:
+                servo(ang)
+                time.sleep(.1)
+
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
         self.shuffle()
+        self.servoSweep()
         self.shakeServo()
         self.rightTurn()
         self.leftTurn()
