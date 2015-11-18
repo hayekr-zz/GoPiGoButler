@@ -89,8 +89,8 @@ class Pigo(threading.Thread):
         time.sleep(6)
         self.stop()
 
-    def strobe(self):#Strobe light using the LEDs
-        while self.keepGoing():
+    def strobe(self):# Strobe light using the LEDs
+        while butler.keepGoing():
             led_on(1)
             time.sleep(.10)
             led_off(1)
@@ -99,7 +99,7 @@ class Pigo(threading.Thread):
             led_off(1)
 
     def shuffle(self):
-        while self.keepGoing():
+        while butler.keepGoing():
             right_rot()
             time.sleep(.10)
             left_rot()
@@ -142,8 +142,6 @@ class Pigo(threading.Thread):
        # self.shakeServo()
        # self.rightTurn()
        # self.leftTurn()
-
-
 
 ############
 ######## MAIN APP STARTS HERE
