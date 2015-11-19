@@ -93,7 +93,7 @@ class Pigo:
 
     def strobe(self):# Strobe light using the LEDs
         while butler.keepGoing():
-            for x in range(5)
+            for x in range(5):
             led_on(1)
             time.sleep(.10)
             led_off(1)
