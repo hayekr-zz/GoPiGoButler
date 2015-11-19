@@ -8,7 +8,7 @@ import time
 __author__ = 'Robert Hayek and Keith Neyman'
 
 #Global Variable that says how far butler can get to a wall
-STOP_DIST = 50
+STOP_DIST = 15
 
 #print variables
 ERROR = "ERROR"
@@ -151,6 +151,7 @@ class Pigo:
             time.sleep(.1)
 
     def dance(self):
+        self.keepWatch()
         print "STARTING DANCE METHOD" #Dance Method
         print "Spin!"
         self.spin()
