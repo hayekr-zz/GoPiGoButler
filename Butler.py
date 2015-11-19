@@ -80,12 +80,12 @@ class Pigo:
     ############
     def spin(self):
         while butler.keepGoing():
-            for x in range(5):
+            for x in range(2):
                 right_rot()
-                time.sleep(6)
+                time.sleep(.10)
                 self.stop()
                 left_rot()
-                time.sleep(6)
+                time.sleep(.10)
                 self.stop()
 
     def strobe(self):# Strobe light using the LEDs
