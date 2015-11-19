@@ -3,7 +3,6 @@
 #imports
 from gopigo import *
 import time
-import threading
 
 
 __author__ = 'Robert Hayek and Keith Neyman'
@@ -18,14 +17,15 @@ STOP = "STOPPING"
 MOVE = "MOVING"
 YES = "CONTINUING"
 
-class Pigo(threading.Thread):
+servo(90)
+
+class Pigo:
 
 
     ############
     ######## BASIC STATUS AND METHODS
     ############
     status = {'isMoving' : False, 'servo': 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}#gets the status of the robot
-
     def __init__(self):
         threading.Thread.__init__(self)
         print "BUTLERPI IS NOW ON"
@@ -82,66 +82,66 @@ class Pigo(threading.Thread):
     ######## Dance Methods
     ############
     def spin(self):
-        right_rot()
-        time.sleep(6)
-        self.stop()
-        left_rot()
-        time.sleep(6)
-        self.stop()
+        while butler.keepGoing():
+            for x in range(5):
+                right_rot()
+                time.sleep(6)
+                self.stop()
+                left_rot()
+                time.sleep(6)
+                self.stop()
 
     def strobe(self):# Strobe light using the LEDs
         while butler.keepGoing():
+            for x in range(5)
             led_on(1)
             time.sleep(.10)
             led_off(1)
-            led_on(0)
+            # led_on(0)
             time.sleep(.10)
             led_off(1)
 
     def shuffle(self):
         while butler.keepGoing():
-            right_rot()
-            time.sleep(.10)
-            left_rot()
-            time.sleep(.10)
-
-    def shakeServo(self):
-        enable_servo()
-        servo(45)
-        servo(-10)
-        servo(10)
-        servo(-20)
-        servo(10)
-        diasble_servo()
+            for x in range(5):
+                right_rot()
+                time.sleep(.10)
+                left_rot()
+                time.sleep(.10)
 
     def rightTurn(self):
-        fwd()
-        right_rot(50)
-        fwd()
+        while butler.keepGoing():
+            for x in range(3):
+                fwd()
+                right_rot(50)
+                fwd()
 
     def leftTurn(self):
-        fwd()
-        time.sleep(.10)
-        left_rot(50)
-        fwd()
-        time.sleep(.10)
+        while butler.keepGoing():
+            for x in range(3):
+                fwd()
+                time.sleep(.10)
+                left_rot(50)
+                fwd()
+                time.sleep(.10)
 
-    def specialSurprise(self):
-        right_rot()
-        time.sleep(.5)
-        left_rot()
-        time.sleep(.5)
-        increase_speed()
-        bwd()
-        enc_tgt(1,1,72)
-        fwd()
-        enable_servo()
-        servo(45)
-        servo(-10)
-        servo(10)
-        servo(-20)
-        servo(10)
-        diasble_servo()
+    def specialMethod(self):
+        while butler.keepGoing():
+            for x in range(5):
+            right_rot()
+            time.sleep(.5)
+            left_rot()
+            time.sleep(.5)
+            increase_speed()
+            bwd()
+            enc_tgt(1,1,72)
+            fwd()
+            servo(45)
+            servo(20)
+            servo(20)
+            servo(20)
+            servo(40)
+            stop()
 
 
 
@@ -155,13 +155,18 @@ class Pigo(threading.Thread):
 
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
+        print "Spin!"
         self.spin()
+        print "Shuffle!"
         self.shuffle()
+        print "Sweep!"
         self.servoSweep()
-        self.shakeServo()
+        print "Turn to the right"
         self.rightTurn()
+        print "Turn to the left!"
         self.leftTurn()
-        self.special()
+        print "SPECIAL MOVE!"
+        self.specialMethod()
 
 ############
 ######## MAIN APP STARTS HERE
