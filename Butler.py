@@ -126,6 +126,25 @@ class Pigo(threading.Thread):
         fwd()
         time.sleep(.10)
 
+    def specialSurprise(self):
+        right_rot()
+        time.sleep(.5)
+        left_rot()
+        time.sleep(.5)
+        increase_speed()
+        bwd()
+        enc_tgt(1,1,72)
+        fwd()
+        enable_servo()
+        servo(45)
+        servo(-10)
+        servo(10)
+        servo(-20)
+        servo(10)
+        diasble_servo()
+
+
+
     #############
     ######## COMPLEX METHODS
     #############
@@ -137,11 +156,12 @@ class Pigo(threading.Thread):
     def dance(self):
         print "STARTING DANCE METHOD" #Dance Method
         self.spin()
-        #self.shuffle()
-        #self.servoSweep()
-       # self.shakeServo()
-       # self.rightTurn()
-       # self.leftTurn()
+        self.shuffle()
+        self.servoSweep()
+        self.shakeServo()
+        self.rightTurn()
+        self.leftTurn()
+        self.special()
 
 ############
 ######## MAIN APP STARTS HERE
