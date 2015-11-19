@@ -71,9 +71,9 @@ class Pigo:
         set_right_speed(500)
 
     def butlerStatus(self):
-        print "The Voltage is" + volt()
-        print "Current firmware is" + fw_ver()
-        print "The Status Register" + read_status()
+        print "The Voltage is" + str(volt())
+        print "Current firmware is" + str(fw_ver())
+        print "The Status Register is" + str(read_status())
 
     ############
     ######## Dance Methods
