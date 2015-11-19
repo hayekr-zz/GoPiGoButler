@@ -128,20 +128,20 @@ class Pigo:
     def specialMethod(self):
         while butler.keepGoing():
             for x in range(5):
-            right_rot()
-            time.sleep(.5)
-            left_rot()
-            time.sleep(.5)
-            increase_speed()
-            bwd()
-            enc_tgt(1,1,72)
-            fwd()
-            servo(45)
-            servo(20)
-            servo(20)
-            servo(20)
-            servo(40)
-            stop()
+                right_rot()
+                time.sleep(.5)
+                left_rot()
+                time.sleep(.5)
+                increase_speed()
+                bwd()
+                enc_tgt(1,1,72)
+                fwd()
+                servo(45)
+                servo(20)
+                servo(20)
+                servo(20)
+                servo(40)
+                stop()
 
 
 
