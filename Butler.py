@@ -3,7 +3,7 @@
 #imports
 from gopigo import *
 import time
-
+import threading
 
 __author__ = 'Robert Hayek and Keith Neyman'
 
@@ -11,7 +11,7 @@ __author__ = 'Robert Hayek and Keith Neyman'
 STOP_DIST = 15
 
 #print variables
-ERROR = "ERROR"
+ERROR = "TOO CLOSE"
 VOLT = "HAZARDOUS VOLTAGE"
 STOP = "STOPPING"
 MOVE = "MOVING"
@@ -151,6 +151,8 @@ class Pigo:
             time.sleep(.1)
 
     def dance(self):
+        strobeThread = threading.Threading(target=strobe, args=(self))
+        strobeThread.start()
         self.keepWatch()
         print "STARTING DANCE METHOD" #Dance Method
         print "Spin!"
@@ -159,6 +161,8 @@ class Pigo:
         self.shuffle()
         print "Sweep!"
         self.servoSweep()
+        print "strobe"
+        self.strobe()
         print "Turn to the right"
         self.rightTurn()
         print "Turn to the left!"
@@ -171,10 +175,8 @@ class Pigo:
 ############
 butler = Pigo()
 while butler.keepGoing():
-    butler.keepGoing()
-    butler.equalizeSpeed()
-    butler.dance()
-    butler.strobe()
+    strobeThread = threading.Thread(group=None, target=Pigo.checkDistance, name="strobe", args=(butler, ), Kwargs=None)
+    strobeThread.start()
     butler.keepWatch()
 butler.stop()
 print butler.status
