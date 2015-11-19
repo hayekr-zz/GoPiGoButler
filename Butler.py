@@ -27,7 +27,6 @@ class Pigo:
     ############
     status = {'isMoving' : False, 'servo': 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}#gets the status of the robot
     def __init__(self):
-        threading.Thread.__init__(self)
         print "BUTLERPI IS NOW ON"
         self.status['distance'] = us_dist(15) #update distance  with the current distance through ultrasonic sensor in (mm)
     def stop(self):
