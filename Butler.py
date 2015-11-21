@@ -3,7 +3,7 @@
 #imports
 from gopigo import *
 import time
-import threading
+# import threading
 
 __author__ = 'Robert Hayek and Keith Neyman'
 
@@ -17,7 +17,7 @@ STOP = "STOPPING"
 MOVE = "MOVING"
 YES = "CONTINUING"
 
-servo(90)
+servo(90)#turn the servo head to 90(straight ahead)
 
 class Pigo:
 
@@ -151,8 +151,8 @@ class Pigo:
             time.sleep(.1)
 
     def dance(self):
-        strobeThread = threading.Threading(target=strobe, args=(self))
-        strobeThread.start()
+        # strobeThread = threading.Threading(target=strobe, args=(self))
+        # strobeThread.start()
         self.keepWatch()
         print "STARTING DANCE METHOD" #Dance Method
         print "Spin!"
@@ -175,8 +175,10 @@ class Pigo:
 ############
 butler = Pigo()
 while butler.keepGoing():
-    strobeThread = threading.Thread(group=None, target=Pigo.checkDistance, name="strobe", args=(butler, ), Kwargs=None)
-    strobeThread.start()
+    # strobeThread = threading.Thread(group=None, target=Pigo.checkDistance, name="strobe", args=(butler, ), Kwargs=None)
+    # strobeThread.start()
+    butler.keepWatch()
+    butler.dance()
     butler.keepWatch()
 butler.stop()
 print butler.status
