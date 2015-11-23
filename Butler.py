@@ -7,17 +7,17 @@ import time
 
 __author__ = 'Robert Hayek and Keith Neyman'
 
-#Global Variable that says how far butler can get to a wall
+# Global Variable that says how far butler can get to a wall
 STOP_DIST = 15
 
-#print variables
+# print variables
 ERROR = "TOO CLOSE"
 VOLT = "HAZARDOUS VOLTAGE"
 STOP = "STOPPING"
 MOVE = "MOVING"
 YES = "CONTINUING"
 
-servo(90)#turn the servo head to 90(straight ahead)
+servo(90)  # turn the servo head to 90(straight ahead)
 
 class Pigo:
 
