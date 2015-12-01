@@ -11,7 +11,7 @@ __author__ = 'Robert Hayek and Keith Neyman'
 STOP_DIST = 15
 
 # print variables
-ERROR = "TOO CLOSE"
+ERROR = "OBJECT IS TOO CLOSE"
 VOLT = "HAZARDOUS VOLTAGE"
 STOP = "STOPPING"
 MOVE = "MOVING"
