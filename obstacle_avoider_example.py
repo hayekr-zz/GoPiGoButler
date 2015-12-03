@@ -189,5 +189,5 @@ class Pigo:
 ############# Main App
 ###################################
 
- while Pigo.keepWatch():
+ while Pigo.keepGoing():
      Pigo.quickcheck()
