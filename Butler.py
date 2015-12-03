@@ -17,7 +17,7 @@ STOP = "STOPPING"
 MOVE = "MOVING"
 YES = "CONTINUING"
 
-servo(90)  # turn the servo head to 90(straight ahead)
+servo(85)  # turn the servo head to 90(straight ahead)
 
 class Pigo:
 
