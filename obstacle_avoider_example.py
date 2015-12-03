@@ -14,6 +14,7 @@ class Pigo:
     sweep = [None] * 160  #the list to hold scanning data
     cornerdistance = 10  #used to check the corners for nearby collisions
     fardistance = 90  #distance used when plotting a clear direction... longer so we're planning farther ahead
+    status = {'isMoving' : False, 'servo': 90, 'leftSpeed' : 175, 'rightSpeed' : 175, "distance" : 100}
 
     def __init__(self):
         print "NOW RUNNING OBSTACLE AVOIDER"
@@ -37,6 +38,16 @@ class Pigo:
             print "Quick check failed. [70|",check1,"cm.][80|",check2,"cm.][90|",check3,"cm.]"
             disable_servo()
             return False
+    def keepGoing(self):
+        if self.status['distance'] < STOP_DIST:
+            print "OBSTACLE FOUND CHECKING WEATHER TO STOP"
+            self.checkDistance()
+            if self.status['distance'] < STOP_DIST:
+                print ERROR
+                return False
+    def checkDistance(self):
+            self.status['distance'] = us_dist(15)
+            print "CHECKING DISTANCE..." + "SOMETHING IS " + str(self.status['distance']) + "mm away"
 
     def crashcheck(counter):
         if counter % 10 == 0:
@@ -173,3 +184,10 @@ class Pigo:
 
     stop()   #once the loop is broken, let's tidy things up just to be sure.
     disable_servo()
+
+####################################
+############# Main App
+###################################
+
+ while Pigo.keepWatch():
+     Pigo.quickcheck()
