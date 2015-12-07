@@ -34,7 +34,7 @@ class Pigo:
         time.sleep(.1)
         check3 = us_dist(15
         if check1 > MIN_DIST and check2 > MIN_DIST and check3 > MIN_DIST:
-            print(ALL CLEAR)
+            print "ALL CLEAR"
             disable_servo()
             return True
         else:
