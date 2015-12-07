@@ -16,7 +16,7 @@ class Pigo:
         print "NOW RUNNING OBSTACLE AVOIDER"
 
     def servoSweep(self):
-        for angle in range(15, 150, 2):
+        for angle in range(15, 150, 5):
             servo(angle)
             time.sleep(.10)
             self.sweep[angle] = us_dist(15)
