@@ -33,7 +33,7 @@ class Pigo:
         servo(90) #check the left edge of our forward path
         time.sleep(.1)
         check3 = us_dist(15
-        if check1 > distance and check2 > distance and check3 > distance:
+        if check1 > MIN_DIST and check2 > MIN_DIST and check3 > MIN_DIST:
             print(ALL CLEAR)
             disable_servo()
             return True
