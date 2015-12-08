@@ -20,6 +20,7 @@ class Pigo:
             servo(angle)
             time.sleep(.10)
             self.sweep[angle] = us_dist(15)
+            print angle
 
 
     def fastCheck(self):
