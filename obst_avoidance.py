@@ -6,7 +6,7 @@ import time
 
 __author__ = 'Robert Hayek'
 
-servo(83)
+servo(80)
 
 class Pigo:
     sweep = [None] * 160  #the list to hold scanning data
@@ -19,8 +19,8 @@ class Pigo:
         for angle in range(15, 150, 5):
             servo(angle)
             time.sleep(.10)
-            self.sweep[angle] = us_dist(15)
-            self.status['distance'] = us_dist(15)
+            self.sweep['angle'] = us_dist(15)
+            print self.sweep[angle]
 
     def checkDistance(self):
         self.status['distance'] = us_dist(15)
