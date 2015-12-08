@@ -20,7 +20,7 @@ class Pigo:
             servo(angle)
             time.sleep(.10)
             self.sweep[angle] = us_dist(15)
-            print str(self.sweep[angle]) + "MM Away"
+            print str(self.sweep[angle]) + " MM AWAY FROM ORIGIN"
 
     def findPath(self):
         for angle in self.sweep:
