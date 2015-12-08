@@ -20,28 +20,11 @@ class Pigo:
             servo(angle)
             time.sleep(.10)
             self.sweep[angle] = us_dist(15)
-            print MIN_DIST
+            self.status['distance'] = us_dist(15)
 
-
-    def fastCheck(self):
-        enable_servo()
-        servo(70)  #check the right edge of our forward path
-        time.sleep(.2) #pause so the sensor reading is more accurate
-        check1 = us_dist(15) #first check
-        servo(80)  #check dead ahead
-        time.sleep(.1)
-        check2 = us_dist(15)
-        servo(90) #check the left edge of our forward path
-        time.sleep(.1)
-        check3 = us_dist(15)
-        if check1 > MIN_DIST and check2 > MIN_DIST and check3 > MIN_DIST:
-            print "ALL CLEAR"
-            disable_servo()
-            return True
-        else:
-            print "CHECK FAILED"
-            disable_servo()
-            return False
+    def checkDistance(self):
+        self.status['distance'] = us_dist(15)
+        print "CHECKING DISTANCE..." + "SOMETHING IS " + str(self.status['distance']) + "mm away"
 
     def findaPath(self):
         for angle in self.sweep:
