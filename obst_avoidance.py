@@ -48,7 +48,6 @@ butler = Pigo()
         butler.turnAround()
 butler.stop()
 '''
-butler.servoSweep()
-print butler.findPath()
+butler.turnAround()
 
 
