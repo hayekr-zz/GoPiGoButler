@@ -35,7 +35,7 @@ class Pigo:
 
     def turnAround(self):
         right_rot()
-        self.sleep(.10)
+        time.sleep(.10)
 
 butler = Pigo()
 
